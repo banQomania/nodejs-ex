@@ -8,7 +8,7 @@ var express = require('express'),
 Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
-//app.set('views', path.join(__dirname, 'views'));
+//app.set('views',path.join(__dirname, 'views'));
 app.use(morgan('combined'))
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
@@ -95,12 +95,12 @@ app.get('/pagecount', function (req, res) {
 
 app.get('/secondpage', function(req,res){
     
-    res.render('secondpage.html');
+    res.render('../views/secondpage.html');
 });
 
 app.get('/thirdpage', function(req,res){
     
-    res.render('thirdpage.html');
+    res.render('../views/thirdpage.html');
 });
 
 // error handling
